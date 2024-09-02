@@ -24,13 +24,14 @@ namespace AndroidTests
             options.AddAdditionalCapability("app", appLocation);
 
             driver = new AndroidDriver<AndroidElement>(new Uri(AppiumUrl), options);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2000);
         }
 
 
         [TearDown]
         public void CloseApp()
         {
+
             driver.Quit();
         }
 
